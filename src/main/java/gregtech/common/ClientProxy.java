@@ -21,6 +21,7 @@ import gregtech.common.items.MetaItems;
 import gregtech.common.render.CableRenderer;
 import gregtech.common.render.FluidPipeRenderer;
 import gregtech.common.render.StoneRenderer;
+import io.github.pixee.security.BoundedLineReader;
 import net.minecraft.block.BlockColored;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -269,7 +270,7 @@ public class ClientProxy extends CommonProxy {
         BufferedReader reader = new BufferedReader(streamReader);
         Set<UUID> result = new HashSet<>();
         for (; ; ) {
-            String line = reader.readLine();
+            String line = BoundedLineReader.readLine(reader, 5_000_000);
             if (line == null)
                 break;
             int firstCommentIndex = line.indexOf('#');
