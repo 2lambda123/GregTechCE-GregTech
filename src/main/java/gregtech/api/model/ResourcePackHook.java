@@ -86,7 +86,7 @@ public class ResourcePackHook implements IResourceManagerReloadListener, IResour
 
     @Override
     public <T extends IMetadataSection> T getPackMetadata(MetadataSerializer metadataSerializer, String metadataSectionName) throws IOException {
-        if (metadataSectionName.equals("pack")) {
+        if ("pack".equals(metadataSectionName)) {
             return (T) new PackMetadataSection(new TextComponentString(getPackName()), 1);
         }
         return null;

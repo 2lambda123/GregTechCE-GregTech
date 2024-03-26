@@ -29,7 +29,7 @@ public class SaveFormatOldLoadVisitor extends SafeMethodVisitor {
     public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf) {
         super.visitMethodInsn(opcode, owner, name, desc, itf);
         if (state == State.WAITING_FOR_READ && opcode == Opcodes.INVOKESTATIC
-                && owner.equals(LOAD_COMPRESSED_OWNER) && LOAD_COMPRESSED_METHOD.matches(name, desc)) {
+                && LOAD_COMPRESSED_OWNER.equals(owner) && LOAD_COMPRESSED_METHOD.matches(name, desc)) {
             state = State.WAITING_FOR_VAR;
         }
     }

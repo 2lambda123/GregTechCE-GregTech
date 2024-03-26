@@ -29,10 +29,10 @@ public class WorldConfigUtils {
 
         for (JsonElement worldPredicate : predicateArray) {
             String stringValue = worldPredicate.getAsString();
-            if (stringValue.equals("is_surface_world")) {
+            if ("is_surface_world".equals(stringValue)) {
                 allPredicates.add(WorldProvider::isSurfaceWorld);
                 continue;
-            } else if (stringValue.equals("is_nether")) {
+            } else if ("is_nether".equals(stringValue)) {
                 allPredicates.add(wp -> wp.isNether() || wp.getDimensionType() == DimensionType.NETHER);
                 continue;
             }

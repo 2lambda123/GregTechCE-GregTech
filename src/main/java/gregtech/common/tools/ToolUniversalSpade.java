@@ -36,11 +36,11 @@ public class ToolUniversalSpade extends ToolBase {
     @Override
     public boolean canMineBlock(IBlockState block, ItemStack stack) {
         String tool = block.getBlock().getHarvestTool(block);
-        return (tool != null && (tool.equals("shovel") ||
-            tool.equals("axe") ||
-            tool.equals("saw") ||
-            tool.equals("sword") ||
-            tool.equals("crowbar"))) ||
+        return (tool != null && ("shovel".equals(tool) ||
+            "axe".equals(tool) ||
+            "saw".equals(tool) ||
+            "sword".equals(tool) ||
+            "crowbar".equals(tool))) ||
             block.getMaterial() == Material.SAND ||
             block.getMaterial() == Material.GRASS ||
             block.getMaterial() == Material.GROUND ||

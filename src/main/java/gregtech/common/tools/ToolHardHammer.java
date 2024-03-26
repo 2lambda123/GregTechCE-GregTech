@@ -70,7 +70,7 @@ public class ToolHardHammer extends ToolBase {
     public boolean canMineBlock(IBlockState block, ItemStack stack) {
         String tool = block.getBlock().getHarvestTool(block);
         ItemStack itemStack = new ItemStack(block.getBlock(), 1, block.getBlock().getMetaFromState(block));
-        return (tool != null && (tool.equals("hammer") || tool.equals("pickaxe"))) ||
+        return (tool != null && ("hammer".equals(tool) || "pickaxe".equals(tool))) ||
             block.getMaterial() == Material.ROCK ||
             block.getMaterial() == Material.GLASS ||
             block.getMaterial() == Material.ICE ||

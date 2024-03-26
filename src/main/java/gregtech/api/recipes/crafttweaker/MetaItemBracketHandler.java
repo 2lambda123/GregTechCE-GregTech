@@ -43,7 +43,7 @@ public class MetaItemBracketHandler implements IBracketHandler {
                 }
             }
             for(MetaValueItem entry : item.getAllItems()) {
-                if (!entry.unlocalizedName.equals("meta_item")) {
+                if (!"meta_item".equals(entry.unlocalizedName)) {
                     metaItemNames.put(entry.unlocalizedName, entry.getStackForm());
                 }
             }

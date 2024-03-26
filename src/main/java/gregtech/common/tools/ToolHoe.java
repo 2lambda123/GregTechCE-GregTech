@@ -21,7 +21,7 @@ public class ToolHoe extends ToolBase {
     @Override
     public boolean canMineBlock(IBlockState block, ItemStack stack) {
         String tool = block.getBlock().getHarvestTool(block);
-        return (tool != null && tool.equals("hoe")) ||
+        return (tool != null && "hoe".equals(tool)) ||
             block.getMaterial() == Material.GROUND;
     }
 
