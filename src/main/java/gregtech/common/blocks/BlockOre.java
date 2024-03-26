@@ -46,7 +46,7 @@ public class BlockOre extends BlockFalling implements IBlockOre {
     @Override
     public Material getMaterial(IBlockState state) {
         String harvestTool = getHarvestTool(state);
-        if (harvestTool != null && harvestTool.equals("shovel")) {
+        if (harvestTool != null && "shovel".equals(harvestTool)) {
             return Material.GROUND;
         }
         return Material.ROCK;

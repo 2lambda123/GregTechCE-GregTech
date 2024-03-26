@@ -33,7 +33,7 @@ public class AmplifierRecipeBuilder extends RecipeBuilder<AmplifierRecipeBuilder
 
     @Override
     public boolean applyProperty(String key, Object value) {
-        if (key.equals("amplifier")) {
+        if ("amplifier".equals(key)) {
             this.amplifierAmount(((Number) value).intValue());
             return true;
         }

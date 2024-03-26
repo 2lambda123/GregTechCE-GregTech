@@ -43,9 +43,9 @@ public class PredicateConfigUtils {
     }
 
     private static WorldBlockPredicate createSimpleStatePredicate(String stringDeclaration) {
-        if (stringDeclaration.equals("any")) {
+        if ("any".equals(stringDeclaration)) {
             return (state, world, pos) -> true;
-        } else if (stringDeclaration.equals("stone_type")) {
+        } else if ("stone_type".equals(stringDeclaration)) {
             return (state, world, pos) -> StoneType.computeStoneType(state, world, pos) != null;
 
         } else if (stringDeclaration.startsWith("stone_type:")) {

@@ -50,7 +50,7 @@ public class ResourcePackFix {
 
     private static File getGTCEResourcePackRoot() {
         URL mcModURL = GregTechMod.class.getResource("/mcmod.info");
-        Preconditions.checkState(mcModURL.getProtocol().equals("file"), "Protocol is not file");
+        Preconditions.checkState("file".equals(mcModURL.getProtocol()), "Protocol is not file");
         return new File(mcModURL.getPath()).getParentFile();
     }
 

@@ -166,10 +166,10 @@ public class WorldGenRegistry {
         try {
             URI sampleUri = WorldGenRegistry.class.getResource("/assets/gregtech/.gtassetsroot").toURI();
             Path worldgenJarRootPath;
-            if (sampleUri.getScheme().equals("jar") || sampleUri.getScheme().equals("zip")) {
+            if ("jar".equals(sampleUri.getScheme()) || "zip".equals(sampleUri.getScheme())) {
                 zipFileSystem = FileSystems.newFileSystem(sampleUri, Collections.emptyMap());
                 worldgenJarRootPath = zipFileSystem.getPath("/assets/gregtech/worldgen");
-            } else if (sampleUri.getScheme().equals("file")) {
+            } else if ("file".equals(sampleUri.getScheme())) {
                 worldgenJarRootPath = Paths.get(WorldGenRegistry.class.getResource("/assets/gregtech/worldgen").toURI());
             } else {
                 throw new IllegalStateException("Unable to locate absolute path to worldgen root directory: " + sampleUri);

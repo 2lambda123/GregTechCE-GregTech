@@ -39,7 +39,7 @@ public class ImplosionRecipeBuilder extends RecipeBuilder<ImplosionRecipeBuilder
 
     @Override
     public boolean applyProperty(String key, Object value) {
-        if (key.equals("explosives")) {
+        if ("explosives".equals(key)) {
             explosivesAmount((int) value);
             return true;
         }
@@ -48,7 +48,7 @@ public class ImplosionRecipeBuilder extends RecipeBuilder<ImplosionRecipeBuilder
 
     @Override
     public boolean applyProperty(String key, ItemStack exploType) {
-        if (key.equals("explosives")) {
+        if ("explosives".equals(key)) {
             explosivesAmount(exploType.getCount());
             explosivesType = exploType;
             return true;
